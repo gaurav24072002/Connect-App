@@ -17,6 +17,13 @@ html{
     overflow-x: hidden;
 }
 
+html, body{
+    height: 100%;
+    min-height: 100%;
+    background-color: #fff;
+    font-weight: 300;
+}
+
 a{
     color: inherit;
 }
@@ -58,6 +65,17 @@ nav a:hover{
     background-color: var(--buttonHoverBg);
     color: var(--connectRed);
     border-radius: 50%;
+}
+
+.wrapper{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.wrapper > .row {
+    margin: 0;
+    height: 100%;
 }
 
 button{
@@ -429,4 +447,212 @@ color: var(--connectRed);
     background-color: var(--connectedLightRed);
     border: none;
     color: black;
+}
+
+.chatPageContainer{
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+    flex: 1;
+}
+
+.chatTitleBar{
+    border-bottom: 1px solid var(--lightGrey);
+    display: flex;
+    align-items: center;
+    min-height: 60px;
+    padding: 10px;
+}
+
+.chatTitleBar label{
+    margin:0 10px 0 0;
+}
+
+#userSearchTextbox{
+border: none;
+font-weight: 200;
+flex: 1;
+min-width: 250px;
+}
+
+#createChatButton{
+    border: none;
+    background-color: var(--connectRed);
+    color: #fff;
+    padding: 7px 20px;
+    margin: 10px auto;
+    border-radius: 50px;
+}
+
+#createChatButton:disabled{
+    background-color: var(--connectedLightRed);
+    color: #fff;
+}
+
+.selectedUser{
+    font-weight: 500;
+    background-color: #f8aeff;
+    color: rgb(119, 0, 255 ,56);
+    padding: 5px;
+    border-radius: 5px;
+    margin: 5px 5px 0 0;
+    display: inline-block;
+}
+
+.resultListItem{
+    padding: 7px;
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    border-bottom: 1px solid var(--lightGrey);
+}
+
+.resultListItem:hover{
+    background-color: #f2f2f2;
+}
+
+.resultsDetailsContainer{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.resultsDetailsContainer .heading{
+    font-weight: 500;
+}
+
+.resultsDetailsContainer .subText{
+    columns: var(--greyText);
+    font-size: 14px;
+}
+
+.resultListItem img{
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+}
+
+.resultsImageContainer{
+    height: 40px;
+    width: 40px;
+    position: relative;
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+    padding: 3px;
+}
+
+.groupChatImage img{
+    height: 65%;
+    width: 65%;
+    position: absolute;
+    bottom: 0;
+    margin: 0;
+    border: 2px solid #fff;
+}
+
+.groupChatImage img:first-of-type{
+    top: 0;
+    right: 0;
+}
+
+.ellipsis{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.chatTitleBarContainer {
+    border-bottom: 1px solid var(--lightGrey);
+    display: flex;
+    align-items: center;
+    padding: var(--spacing);
+}
+
+#chatName {
+    width: 100%;
+    border: 1px solid transparent;
+    padding: 0 5px;
+}
+
+#chatName:hover {
+    border: 1px solid var(--lightGrey);
+    cursor: text;
+}
+
+.chatContainer {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow-y: hidden;
+}
+
+.chatContainer .footer {
+    display: flex;
+    padding: var(--spacing);
+    flex-shrink: 0px;
+}
+
+.chatContainer .footer textarea {
+    flex: 1;
+    resize: none;
+    background-color: rgba(0,0,0,0.05);
+    border-radius: 18px;
+    border: none;
+    padding: 8px 12px;
+    height: 38px;
+}
+
+.chatContainer .footer button {
+    background-color: transparent;
+    color: var(--blue);
+    font-size: 24px;
+}
+
+.chatMessages {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    padding: var(--spacing);
+}
+
+.chatImagesContainer {
+    display: flex;
+    flex-direction: row-reverse;
+    height: 100%;
+    margin-right: 10px;
+}
+
+.chatImagesContainer img {
+    width: 40px;
+    height: 40px;
+    border: 2px solid #fff;
+    border-radius: 50%;
+}
+
+.chatImagesContainer .userCount {
+    height: 40px;
+    width: 40px;
+    background-color: #f1f1f1;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    border: 2px solid #fff;
+}
+
+.chatImagesContainer img:not(:last-child),
+.chatImagesContainer .userCount {
+    margin-left: -10px;
+}
+
+#chatNameTextbox{
+    width: 100%;
+    outline: none;
+    background-color: var(--lightGrey);
+    border: none;
+    border-radius: 25px;
+    padding: 8px;
 }
