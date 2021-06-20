@@ -6,6 +6,9 @@ $(document).ready(() => {
         else {
             outputChatList(data, $(".resultsContainer"));
         }
+
+        $(".loadingSpinnerContainer").remove();
+        $(".resultsContainer").css("visibility", "visible");
     })
 })
 
@@ -20,47 +23,4 @@ function outputChatList(chatList, container) {
     }
 }
 
-function createChatHtml(chatData) {
-    var chatName = getChatName(chatData);
-    var image = getChatImageElements(chatData);
-    var latestMessage = getLatestMessage(chatData.latestMessage);
-    
-    return `<a href='/messages/${chatData._id}' class='resultListItem'>
-                ${image}
-                <div class='resultsDetailsContainer ellipsis'>
-                    <span class='heading ellipsis'>${chatName}</span>
-                    <span class='subText ellipsis'>${latestMessage}</span>
-                </div>
-            </a>`;
-}
 
-function getLatestMessage(latestMessage){
-    if(latestMessage != null){
-        var sender = latestMessage.sender;
-        return `${sender.firstName} ${sender.lastName}: ${latestMessage.content}`;
-    }
-
-    return "New Chat";
-}
-
-function getChatImageElements(chatData) {
-    var otherChatUsers = getOtherChatUsers(chatData.users);
-
-    var groupChatClass = "";
-    var chatImage = getUserChatImageElement(otherChatUsers[0]);
-
-    if(otherChatUsers.length > 1) {
-        groupChatClass = "groupChatImage";
-        chatImage += getUserChatImageElement(otherChatUsers[1]);
-    }
-
-    return `<div class='resultsImageContainer ${groupChatClass}'>${chatImage}</div>`;
-}
-
-function getUserChatImageElement(user) {
-    if(!user || !user.profilePic) {
-        return alert("User passed into function is invalid");
-    }
-
-    return `<img src='${user.profilePic}' alt='User's profile pic'>`;
-}

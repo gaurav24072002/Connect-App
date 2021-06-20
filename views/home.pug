@@ -3,8 +3,10 @@ extends layouts/main-layout.pug
 block content    
     +createPostForm(userLoggedIn)
     .postsContainer
+        .loadingSpinnerContainer
+            img(src="/images/loadingSpinner2.gif", alt="Loading...")
 
-    +createPostModals(userLoggedIn)
+    +createPostModals(userLoggedIn)(style="visibility: hidden")
 
 block scripts
     script(src="/js/home.js")
