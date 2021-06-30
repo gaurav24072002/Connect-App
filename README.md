@@ -13,13 +13,27 @@
 
 
 ## Registration/Login Page
+_This page is the starting page of the web app to create an account or to login to your account whenever you logout yourself from the app._
+
+**The Interface looks like this :**
+
 
 ## Home Page
 
+**The Interface looks like this :**
+
 ## Profile Page
+
+**The Interface looks like this :**
 
 ## Messages Page
 
+**The Interface looks like this :**
+
 ## Search Page
 
+**The Interface looks like this :**
+
 ## Notification Page
+
+**The Interface looks like this :**
