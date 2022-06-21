@@ -3,6 +3,7 @@ var cropper;
 var timer;
 var selectedUsers = [];
 
+
 $(document).ready(() => {
     refreshMessagesBadge();
     refreshNotificationsBadge();
@@ -683,7 +684,7 @@ function messageRecieved(newMessage){
         showMessagePopup(newMessage)
     }
     else{
-        addChatMessageHtml(newMessage);
+        addChatMessageHtml(newMessage);git 
     }
 
     refreshMessagesBadge()

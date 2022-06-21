@@ -427,6 +427,19 @@ color: var(--connectRed);
     max-width: 100%;
 }
 
+.pinButton.active {
+    color: var(--connectRed);
+}
+
+.pinnedPostText {
+    font-size: 12px;
+    color: var(--greyText);
+}
+
+.pinnedPostContainer {
+    border-bottom: 10px solid rgb(230,236,240);
+}
+
 .searchBarContainer{
     position: relative;
     color: var(--greyText);

@@ -62,7 +62,7 @@ $(".inputTextbox").keydown((event) => {
 
     updateTyping();
 
-    if(event.which === 13) {
+    if(event.which === 13 && !event.shiftKey) {
         messageSubmitted();
         return false;
     }
